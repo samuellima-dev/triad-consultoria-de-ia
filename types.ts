@@ -19,17 +19,16 @@ export interface ProcessStep {
   description: string;
 }
 
-export interface ChatMessage {
-  id: string;
-  role: 'user' | 'assistant';
-  text: string;
-}
-
 export interface SiteConfig {
   showHero: boolean;
-  showDiagnostic: boolean;
   showMethodology: boolean;
   showServices: boolean;
   showCases: boolean;
   showContact: boolean;
+}
+
+export interface ChatMessage {
+  id: string;
+  role: 'user' | 'assistant';
+  text: string;
 }

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BeforeAfterVisual } from './components/BeforeAfterVisual';
-import { DiagnosticDemo } from './components/DiagnosticDemo';
-import { ChatWidget } from './components/ChatWidget';
+import { WhatsAppFloat } from './components/WhatsAppFloat';
 import { AdminPanel } from './components/AdminPanel';
 import { Button } from './components/ui/Button';
 import { 
@@ -11,15 +10,14 @@ import {
   LineChart, 
   Menu, 
   X,
-  Linkedin,
-  Mail,
   Workflow,
   MessageCircle,
   Instagram,
   Send,
-  BarChart3,
   CheckCircle2,
-  Loader2
+  Loader2,
+  Linkedin,
+  Mail
 } from 'lucide-react';
 import { ServiceItem, CaseStudy, ProcessStep, SiteConfig } from './types';
 
@@ -87,7 +85,6 @@ function App() {
   // Site Config State for Admin Panel
   const [siteConfig, setSiteConfig] = useState<SiteConfig>({
     showHero: true,
-    showDiagnostic: true,
     showMethodology: true,
     showServices: true,
     showCases: true,
@@ -266,9 +263,6 @@ function App() {
           </div>
         </section>
       )}
-
-      {/* Diagnostic Demo Section */}
-      {siteConfig.showDiagnostic && <DiagnosticDemo />}
 
       {/* Methodology / Process Section */}
       {siteConfig.showMethodology && (
@@ -479,7 +473,7 @@ function App() {
       )}
 
       {/* Fixed Components */}
-      <ChatWidget />
+      <WhatsAppFloat />
       <AdminPanel config={siteConfig} setConfig={setSiteConfig} />
     </div>
   );

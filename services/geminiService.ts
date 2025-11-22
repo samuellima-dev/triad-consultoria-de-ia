@@ -1,14 +1,8 @@
 import { GoogleGenAI } from "@google/genai";
 
-const apiKey = process.env.API_KEY;
-
 export const analyzeBottleneck = async (bottleneckDescription: string): Promise<string> => {
-  if (!apiKey) {
-    return "Simulação: Identificamos que este processo manual consome tempo e gera riscos de erro. A implementação de uma automação segura organizaria esses dados instantaneamente, liberando sua equipe para tarefas mais importantes. (Configure sua API Key para uma análise real).";
-  }
-
   try {
-    const ai = new GoogleGenAI({ apiKey });
+    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
     const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash',
       config: {
@@ -26,12 +20,8 @@ export const analyzeBottleneck = async (bottleneckDescription: string): Promise<
 };
 
 export const chatWithAssistant = async (userMessage: string): Promise<string> => {
-  if (!apiKey) {
-    return "Olá! Sou o assistente virtual da Triad. Como posso ajudar a automatizar sua empresa hoje? (Simulação: Configure sua API Key)";
-  }
-
   try {
-    const ai = new GoogleGenAI({ apiKey });
+    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
     const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash',
       config: {
