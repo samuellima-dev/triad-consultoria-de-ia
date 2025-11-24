@@ -155,9 +155,20 @@ export const WhatsAppFloat: React.FC = () => {
       {/* Floating Button */}
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 bg-[#25D366] hover:bg-[#20b858] text-white rounded-full shadow-[0_0_20px_rgba(37,211,102,0.4)] flex items-center justify-center transition-all duration-300 hover:scale-110 border border-white/10 z-50"
+        className="group relative z-50 transition-transform duration-300 hover:scale-110 focus:outline-none"
+        title="Falar no WhatsApp"
       >
-        {isOpen ? <X className="w-6 h-6" /> : <MessageCircle className="w-7 h-7" />}
+        {isOpen ? (
+          <div className="w-14 h-14 bg-slate-800 rounded-full flex items-center justify-center shadow-lg border border-slate-700">
+             <X className="w-6 h-6 text-white" />
+          </div>
+        ) : (
+          <img 
+            src="https://png.pngtree.com/png-vector/20221018/ourmid/pngtree-whatsapp-icon-png-image_6315990.png" 
+            alt="WhatsApp" 
+            className="w-16 h-16 drop-shadow-[0_0_15px_rgba(37,211,102,0.6)]"
+          />
+        )}
       </button>
     </div>
   );
