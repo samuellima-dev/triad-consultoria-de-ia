@@ -17,7 +17,9 @@ import {
   CheckCircle2,
   Loader2,
   Linkedin,
-  Mail
+  Mail,
+  Globe,
+  Code
 } from 'lucide-react';
 import { ServiceItem, CaseStudy, ProcessStep, SiteConfig } from './types';
 
@@ -41,6 +43,16 @@ const services: ServiceItem[] = [
     title: "Automação de Instagram",
     description: "Transforme seguidores em clientes. Respostas automáticas a DMs, comentários e menções em stories para conversão instantânea.",
     icon: Instagram
+  },
+  {
+    title: "Criação de Sites com IA",
+    description: "Landing pages de alta conversão e design premium. Estruturas velozes, otimizadas para SEO e vendas, integradas nativamente com nossas ferramentas de IA.",
+    icon: Globe
+  },
+  {
+    title: "Sistemas Inteligentes",
+    description: "Desenvolvimento de softwares web personalizados e painéis administrativos sob medida. Soluções robustas para gerenciar processos complexos da sua empresa.",
+    icon: Code
   }
 ];
 
@@ -442,6 +454,8 @@ function App() {
                     <option value="Quero automatizar meu Atendimento/Vendas">Atendimento & Vendas (IA)</option>
                     <option value="Quero otimizar processos Financeiros/Adm">Financeiro & Administrativo</option>
                     <option value="Quero automatizar meu Instagram">Instagram & Redes Sociais</option>
+                    <option value="Quero criar um Site ou Landing Page">Criação de Sites & Landing Pages</option>
+                    <option value="Preciso de um Sistema Inteligente Personalizado">Sistemas Inteligentes & Software</option>
                     <option value="Tenho uma demanda específica">Outra demanda específica</option>
                   </select>
                 </div>
